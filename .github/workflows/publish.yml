@@ -32,18 +32,13 @@ jobs:
             asset_name: staticterm-macos
 
     steps:
-    - uses: actions/checkout@v1
-
-    - uses: actions-rs/toolchain@v1
-      with:
-        profile: minimal
-        toolchain: stable
+    - uses: actions/checkout@v2
 
     - name: Build
       run: cargo build --release --locked
 
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v1-release
+      uses: svenstaro/upload-release-action@v2-release
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/${{ matrix.artifact_name }}

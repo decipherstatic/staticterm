@@ -14,7 +14,6 @@ jobs:
         name: [
             linux,
             windows,
-            macos
         ]
 
         include:
@@ -26,10 +25,6 @@ jobs:
             os: windows-latest
             artifact_name: staticterm.exe
             asset_name: staticterm-windows
-          - name: macos
-            os: macos-latest
-            artifact_name: staticterm
-            asset_name: staticterm-macos
 
     steps:
     - uses: actions/checkout@v2
